@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:news_app/widgets/categories_list_view.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -13,7 +14,7 @@ class HomePage extends StatelessWidget {
           mainAxisSize: .min,
           children: [
             const Text(
-              'News ',
+              'News',
               style: TextStyle(
                 color: Colors.white,
                 fontSize: 20,
@@ -21,7 +22,7 @@ class HomePage extends StatelessWidget {
               ),
             ),
             Container(
-              padding: const .symmetric(horizontal: 8, vertical: 4),
+              padding: const .symmetric(horizontal: 6, vertical: 4),
               decoration: BoxDecoration(
                 color: Colors.orange,
                 borderRadius: BorderRadius.circular(8),
@@ -38,6 +39,7 @@ class HomePage extends StatelessWidget {
           ],
         ),
       ),
+      body: const CategoriesListView(),
     );
   }
 }
