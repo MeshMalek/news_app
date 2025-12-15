@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:news_app/widgets/categories_list_view.dart';
+import 'package:news_app/widgets/news_tile.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -7,8 +8,9 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.transparent,
+      backgroundColor: Color(0xff262729),
       appBar: AppBar(
+        backgroundColor: Color(0xff262729),
         centerTitle: true,
         title: Row(
           mainAxisSize: .min,
@@ -39,7 +41,7 @@ class HomePage extends StatelessWidget {
           ],
         ),
       ),
-      body: const CategoriesListView(),
+      body: Column(children: [const CategoriesListView(), const NewsTile()]),
     );
   }
 }
