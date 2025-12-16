@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:news_app/widgets/categories_list_view.dart';
-import 'package:news_app/widgets/news_tile.dart';
+import 'package:news_app/widgets/news_list_view.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -8,17 +8,17 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xff262729),
       appBar: AppBar(
-        backgroundColor: Color(0xff262729),
         centerTitle: true,
+        elevation: 0,
+        backgroundColor: Colors.transparent,
         title: Row(
           mainAxisSize: .min,
           children: [
             const Text(
               'News',
               style: TextStyle(
-                color: Colors.white,
+                color: Colors.black,
                 fontSize: 20,
                 fontWeight: .bold,
               ),
@@ -30,9 +30,9 @@ class HomePage extends StatelessWidget {
                 borderRadius: BorderRadius.circular(8),
               ),
               child: const Text(
-                'Hub',
+                'Cloud',
                 style: TextStyle(
-                  color: Colors.black,
+                  color: Colors.white,
                   fontSize: 20,
                   fontWeight: .bold,
                 ),
@@ -41,7 +41,16 @@ class HomePage extends StatelessWidget {
           ],
         ),
       ),
-      body: Column(children: [const CategoriesListView(), const NewsTile()]),
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 16),
+        child: Column(
+          children: [
+            const CategoriesListView(),
+
+            const Expanded(child: NewsListView()),
+          ],
+        ),
+      ),
     );
   }
 }

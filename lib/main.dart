@@ -15,12 +15,6 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'NewApp',
       debugShowCheckedModeBanner: false,
-      darkTheme: ThemeData(
-        brightness: Brightness.dark,
-        // Customize dark theme colors here, e.g.,
-        scaffoldBackgroundColor: const Color(0xF21B1B1B),
-        useMaterial3: true,
-      ),
       home: const HomePage(),
     );
   }
