@@ -17,11 +17,7 @@ class HomePage extends StatelessWidget {
           children: [
             const Text(
               'News',
-              style: TextStyle(
-                color: Colors.black,
-                fontSize: 20,
-                fontWeight: .bold,
-              ),
+              style: TextStyle(fontSize: 20, fontWeight: .bold),
             ),
             Container(
               padding: const .symmetric(horizontal: 6, vertical: 4),
@@ -43,11 +39,11 @@ class HomePage extends StatelessWidget {
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16),
-        child: Column(
-          children: [
-            const CategoriesListView(),
-
-            const Expanded(child: NewsListView()),
+        child: CustomScrollView(
+          slivers: [
+            SliverToBoxAdapter(child: const CategoriesListView()),
+            const SliverToBoxAdapter(child: SizedBox(height: 20)),
+            NewsListView(),
           ],
         ),
       ),
