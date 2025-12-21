@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:news_app/models/article_model.dart';
 import 'package:news_app/service/news_service.dart';
 import 'package:news_app/widgets/skeleton_widget.dart';
+import 'package:news_app/widgets/sliver_fill_widget.dart';
 import 'package:skeletonizer/skeletonizer.dart';
 
 import 'news_tile.dart';
@@ -43,7 +44,13 @@ class _NewsListViewState extends State<NewsListView> {
         ),
       );
     }
-
+    //check if articles list is empty
+    if (articles.isEmpty) {
+      return SliverFillWidget(
+        onRetry: getGeneralNews,
+      );
+    }
+    //if articles is not .empty
     // When loaded, show real content with SliverSkeletonizer (disabled)
     return SliverSkeletonizer(
       enabled: false, // Disabled since we have real content
