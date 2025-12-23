@@ -8,10 +8,11 @@ import 'package:news_app/widgets/sliver_fill_widget.dart';
 import 'news_tile.dart';
 
 class NewsListView extends StatefulWidget {
-  const NewsListView({super.key});
-
+  const NewsListView({super.key,required this.category});
+final String category;
   @override
   State<NewsListView> createState() => _NewsListViewState();
+
 }
 
 class _NewsListViewState extends State<NewsListView> {
@@ -21,12 +22,12 @@ class _NewsListViewState extends State<NewsListView> {
   @override
   void initState() {
     super.initState();
-    _newsFuture = _newsService.getGeneralNews(category: 'general');
+    _newsFuture = _newsService.getGeneralNews(category: widget.category);
   }
 
   void _refreshNews() {
     setState(() {
-      _newsFuture = _newsService.getGeneralNews(category: 'general');
+      _newsFuture = _newsService.getGeneralNews(category: widget.category);
     });
   }
 

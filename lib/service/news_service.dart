@@ -6,9 +6,11 @@ class NewsService {
   NewsService(this.dio);
 
   Future<List<ArticleModel>> getGeneralNews({required String category}) async {
+   final  normalized = category.toLowerCase();
+   final url =  'https://newsapi.org/v2/top-headlines?country=us&category=$normalized&apiKey=5689a21b4f13446285b08d6d30c35f74';
     try {
       var response = await dio.get(
-        'https://newsapi.org/v2/top-headlines?country=us&apiKey=5689a21b4f13446285b08d6d30c35f74',
+        url
       );
 
       if (response.data == null) {

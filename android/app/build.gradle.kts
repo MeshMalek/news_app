@@ -30,6 +30,10 @@ android {
         versionName = flutter.versionName
     }
 
+    adbOptions {
+        timeOutInMs = 300000
+    }
+
     buildTypes {
         release {
             // TODO: Add your own signing config for the release build.
