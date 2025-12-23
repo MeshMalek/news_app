@@ -1,21 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:news_app/widgets/news_list_view.dart';
- class CategoryView extends StatelessWidget {
-  const CategoryView({super.key,required this.category});
-final String category;
+
+class CategoryView extends StatelessWidget {
+  const CategoryView({super.key, required this.category});
+  final String category;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text(category),),
+      appBar: AppBar(title: Text(category)),
       body: SafeArea(
-      
-        child: CustomScrollView(
-          slivers: [
-            NewsListView(
-              category: category,
-            )
-          ],
-        ),
+        child: CustomScrollView(slivers: [NewsListView(category: category)]),
       ),
     );
   }
