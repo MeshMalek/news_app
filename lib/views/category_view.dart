@@ -6,6 +6,7 @@ final String category;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(title: Text(category),),
       body: SafeArea(
       
         child: CustomScrollView(
