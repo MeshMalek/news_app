@@ -5,14 +5,15 @@ import 'package:news_app/widgets/category_card.dart';
 class CategoriesListView extends StatelessWidget {
   const CategoriesListView({super.key});
   final List<CategoryModel> categories = const [
-    CategoryModel(imagePath: 'assets/business.avif', categoryName: 'Business'),
+    CategoryModel(imagePath: 'assets/sports.avif', categoryName: 'Sports'),
     CategoryModel(
-      imagePath: 'assets/entertaiment.avif',
+      imagePath: 'assets/entertaiment.jpg',
       categoryName: 'Entertainment',
     ),
     CategoryModel(imagePath: 'assets/health.avif', categoryName: 'Health'),
+    CategoryModel(imagePath: 'assets/business.avif', categoryName: 'Business'),
     CategoryModel(imagePath: 'assets/science.avif', categoryName: 'Science'),
-    CategoryModel(imagePath: 'assets/sports.avif', categoryName: 'Sports'),
+
     CategoryModel(
       imagePath: 'assets/technology.jpeg',
       categoryName: 'Technology',
