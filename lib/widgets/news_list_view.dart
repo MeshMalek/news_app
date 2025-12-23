@@ -4,7 +4,6 @@ import 'package:news_app/models/article_model.dart';
 import 'package:news_app/service/news_service.dart';
 import 'package:news_app/widgets/skeleton_widget.dart';
 import 'package:news_app/widgets/sliver_fill_widget.dart';
-import 'package:skeletonizer/skeletonizer.dart';
 
 import 'news_tile.dart';
 
@@ -16,55 +15,56 @@ class NewsListView extends StatefulWidget {
 }
 
 class _NewsListViewState extends State<NewsListView> {
-  List<ArticleModel> articles = [];
-  bool isLoading = true;
+  late Future<List<ArticleModel>> _newsFuture;
+  final NewsService _newsService = NewsService(Dio());
 
   @override
   void initState() {
     super.initState();
-    getGeneralNews();
+    _newsFuture = _newsService.getGeneralNews(category: 'general');
   }
 
-  Future<void> getGeneralNews() async {
-    isLoading = true;
-    setState(() {});
-    articles = await NewsService(Dio()).getNews();
-    isLoading = false;
-    setState(() {});
+  void _refreshNews() {
+    setState(() {
+      _newsFuture = _newsService.getGeneralNews(category: 'general');
+    });
   }
 
   @override
   Widget build(BuildContext context) {
-    // When loading, show skeleton widgets without SliverSkeletonizer
-    if (isLoading) {
-      return SliverList(
-        delegate: SliverChildBuilderDelegate(
-          (context, index) => const SkeletonizerWidget(),
-          childCount: 5,
-        ),
-      );
-    }
-    //check if articles list is empty
-    if (articles.isEmpty) {
-      return SliverFillWidget(
-        onRetry: getGeneralNews,
-      );
-    }
-    //if articles is not .empty
-    // When loaded, show real content with SliverSkeletonizer (disabled)
-    return SliverSkeletonizer(
-      enabled: false, // Disabled since we have real content
-      effect: ShimmerEffect(
-        baseColor: Colors.grey.shade300,
-        highlightColor: Colors.grey.shade100,
-        duration: const Duration(milliseconds: 1000),
-      ),
-      child: SliverList(
-        delegate: SliverChildBuilderDelegate(
-          (context, index) => NewsTile(article: articles[index]),
-          childCount: articles.length,
-        ),
-      ),
+    return FutureBuilder<List<ArticleModel>>(
+      future: _newsFuture,
+      builder: (context, snapshot) {
+        // Loading state: show skeletons
+        if (snapshot.connectionState == ConnectionState.waiting) {
+          return SliverList(
+            delegate: SliverChildBuilderDelegate(
+              (context, index) => const SkeletonizerWidget(),
+              childCount: 5,
+            ),
+          );
+        }
+
+        // Error or null data
+        if (snapshot.hasError || snapshot.data == null) {
+          return SliverFillWidget(onRetry: _refreshNews);
+        }
+
+        final articles = snapshot.data!;
+
+        // Empty list
+        if (articles.isEmpty) {
+          return SliverFillWidget(onRetry: _refreshNews);
+        }
+
+        // Success: show articles
+        return SliverList(
+          delegate: SliverChildBuilderDelegate(
+            (context, index) => NewsTile(article: articles[index]),
+            childCount: articles.length,
+          ),
+        );
+      },
     );
   }
 }
