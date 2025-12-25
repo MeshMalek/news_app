@@ -9,7 +9,10 @@ class CategoryView extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(title: Text(category)),
       body: SafeArea(
-        child: CustomScrollView(slivers: [NewsListView(category: category)]),
+        child: Padding(
+          padding: const EdgeInsets.all(16),
+          child: CustomScrollView(slivers: [NewsListView(category: category)]),
+        ),
       ),
     );
   }

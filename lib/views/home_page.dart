@@ -26,7 +26,7 @@ class HomePage extends StatelessWidget {
                 borderRadius: BorderRadius.circular(8),
               ),
               child: const Text(
-                'Cloud',
+                'Hub',
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: 20,
