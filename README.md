@@ -1,6 +1,4 @@
-
-https://github.com/user-attachments/assets/885e62cc-97fa-46c5-a025-8747e9885d17
-# News Hub📰
+# News Hub 📰
 
 A modern, fast, and responsive news application built with Flutter. This app fetches real-time news data and provides a seamless user experience with advanced loading states and clean UI.
 
@@ -18,45 +16,35 @@ A modern, fast, and responsive news application built with Flutter. This app fet
 ## 📸 Screenshots
 
 | Loading State (Skeleton) | Light Mode | Dark Mode |
-|---|---|---|
-| ![Loading](link_to_lo![1225](https://github.com/user-attachments/assets/2ec0af89-0dcd-4891-b3f0-c13b5c8f6489)
-ading_image) | ![Light](link_to_ligh![photo_3_2025-12-25_08-01-24](https://github.com/user-attachments/assets/b1e3e552-1db6-4e9f-be79-da122cc49ab2)
-t_image) | ![Dark](link_to_d![photo_4_2025-12-25_08-01-24](https://github.com/user-attachments/assets/89561dc8-3742-44bb-87d2-3d98c55c3802)
-ark_image) |
+|:---:|:---:|:---:|
+| <img src="https://github.com/user-attachments/assets/2ec0af89-0dcd-4891-b3f0-c13b5c8f6489" width="250"> | <img src="https://github.com/user-attachments/assets/b1e3e552-1db6-4e9f-be79-da122cc49ab2" width="250"> | <img src="https://github.com/user-attachments/assets/89561dc8-3742-44bb-87d2-3d98c55c3802" width="250"> |
 
 ---
 
 ## 🛠️ Technical Implementation
 
 ### Packages Used
-* `Dio`: For making API requests.
-* `skeletonizer`: For creating skeleton loading screens.
-
-* `webview`: To open full articles in the browser.
+* `Dio`: For making efficient API requests and handling interceptors.
+* `skeletonizer`: For creating professional skeleton loading screens.
+* `webview_flutter`: To open and read full articles within the app.
 
 ### Key Learnings
-* **API Integration:** Deepened my understanding of asynchronous programming in Dart.
+* **API Integration:** Deepened my understanding of asynchronous programming in Dart using Dio.
 * **Refactoring:** Applied clean code principles to move from a monolithic file structure to a modular one.
+* **UI/UX Enhancement:** Used `SliverFillRemaining` to center error messages and loading states perfectly.
 * **Version Control:** Leveraged GitHub for branch management and commit history.
 
 ---
 
 ## ⚙️ How to Run
 
-1.  **Clone the repo:**
-    ```bash
-    git clone [https://github.com/yourusername/flash-news.git](https://github.com/yourusername/flash-news.git)
-    ```
-2.  **Install dependencies:**
-    ```bash
-    flutter pub get
-    ```
-3.  **Run the app:**
-    ```bash
-    flutter run
-    ```
-
----
+1. **Clone the repo:**
+   ```bash
+   git clone [https://github.com/yourusername/news-hub.git](https://github.com/MeshMalek/news-hub.git)
+   ---
 
 ## 👨‍💻 Author
-**Malek** [www.linkedin.com/in/mostafa-daif-109989398 | 
+
+**Malek (Mostafa Daif)** [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/mostafa-daif-109989398)
+
+---
