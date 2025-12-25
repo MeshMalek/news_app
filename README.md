@@ -17,7 +17,9 @@ A modern, fast, and responsive news application built with Flutter. This app fet
 
 | Loading State (Skeleton) | Light Mode | Dark Mode |
 |---|---|---|
-| ![Loading](link_to_loading_image) | ![Light](link_to_light_image) | ![Dark](link_to_dark_image) |
+| ![Loading](link_to_loading_image) | ![Light](link_to_ligh![photo_3_2025-12-25_08-01-24](https://github.com/user-attachments/assets/b1e3e552-1db6-4e9f-be79-da122cc49ab2)
+t_image) | ![Dark](link_to_d![photo_4_2025-12-25_08-01-24](https://github.com/user-attachments/assets/89561dc8-3742-44bb-87d2-3d98c55c3802)
+ark_image) |
 
 ---
 
