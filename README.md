@@ -15,9 +15,19 @@ A modern, fast, and responsive news application built with Flutter. This app fet
 
 ## 📸 Screenshots
 
+---
+
+## 📸 Screenshots
+
+<div align="center">
+
 | Loading State (Skeleton) | Light Mode | Dark Mode |
 |:---:|:---:|:---:|
-| <img src="https://github.com/user-attachments/assets/2ec0af89-0dcd-4891-b3f0-c13b5c8f6489" width="250"> | <img src="https://github.com/user-attachments/assets/b1e3e552-1db6-4e9f-be79-da122cc49ab2" width="250"> | <img src="https://github.com/user-attachments/assets/89561dc8-3742-44bb-87d2-3d98c55c3802" width="250"> |
+| <img src="https://github.com/user-attachments/assets/113d74c3-94f2-4362-9ca7-26a1f3b021d0" width="250" height="500"> | <img src="https://github.com/user-attachments/assets/b9664916-b777-4c07-b22f-a195b027d01c" width="250" height="500"> | <img src="https://github.com/user-attachments/assets/208d1984-35b6-4d8f-b9d3-734522bbc5c9" width="250" height="500"> |
+
+</div>
+
+---
 
 ---
 
@@ -41,10 +51,3 @@ A modern, fast, and responsive news application built with Flutter. This app fet
 1. **Clone the repo:**
    ```bash
    git clone [https://github.com/yourusername/news-hub.git](https://github.com/MeshMalek/news-hub.git)
-   ---
-
-## 👨‍💻 Author
-
-**Malek (Mostafa Daif)** [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/mostafa-daif-109989398)
-
----
